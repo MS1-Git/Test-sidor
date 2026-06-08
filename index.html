@@ -975,42 +975,32 @@
 <!-- ===== NAV ===== -->
 <nav id="main-nav">
   <a class="nav-logo" onclick="scrollToTop()">
-    <!-- Vincent logo: three-panel rectangle — glass+hand / corkscrew / bottles -->
+    <!-- Vincent logo: three-panel rectangle — glass cradled by hand / corkscrew / three bottles -->
     <svg class="vincent-logo-svg" width="44" height="66" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer frame -->
+      <!-- Outer frame + panel dividers -->
       <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-      <!-- Horizontal dividers -->
-      <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
-      <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
+      <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
+      <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
 
-      <!-- TOP PANEL: wine glass held by hand -->
-      <!-- Glass bowl -->
-      <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-      <!-- Glass stem -->
-      <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
-      <!-- Hand / arm — curved line under glass -->
-      <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-      <!-- Arm extending left -->
-      <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+      <!-- TOP PANEL: wine glass cradled by a hand -->
+      <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
+      <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+      <!-- arm + fanned fingers -->
+      <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+      <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+      <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+      <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
 
       <!-- MIDDLE PANEL: corkscrew -->
-      <!-- Handle bar -->
-      <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
-      <!-- Vertical shaft top -->
-      <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
-      <!-- Spiral coil -->
-      <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+      <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
+      <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
 
-      <!-- BOTTOM PANEL: three wine bottles -->
-      <!-- Left bottle -->
-      <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-      <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-      <!-- Centre bottle -->
-      <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-      <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-      <!-- Right bottle -->
-      <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-      <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+      <!-- BOTTOM PANEL: three standing bottles -->
+      <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+      <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+      <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
     </svg>
     <div class="nav-logo-text">
       <span class="nav-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</span>
@@ -1121,11 +1111,11 @@
         />
       </div>
       <div class="about-text">
-        <p class="eyebrow">La nostra storia</p>
-        <h2 class="section-title" data-sv="Mer än en restaurang — en upplevelse" data-en="More than a restaurant — an experience">Mer än en restaurang — en upplevelse</h2>
+        <p class="eyebrow" data-sv="Vår historia" data-en="Our story">Vår historia</p>
+        <h2 class="section-title" data-sv="Två bröder, en dröm — och doften av nybakad pizza" data-en="Two brothers, one dream — and the scent of fresh pizza">Två bröder, en dröm — och doften av nybakad pizza</h2>
         <div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-dot"></div></div>
         <blockquote class="about-quote" data-sv="Enkel, ärlig mat lagad med kärlek — som det ska vara." data-en="Simple, honest food made with love — as it should be.">"Enkel, ärlig mat lagad med kärlek — som det ska vara."</blockquote>
-        <p class="about-body" data-sv="På Vincent Vin &amp; Bar möts du av vedugnsrostade pizzor, hemlagad pasta och ett noga utvalt vinsortiment. Vi är ett stycke Södermalm — avslappnat, välkomnande och med hjärtat på rätt ställe. Oavsett om du vill äta en snabb lunch, ta ett glas vin med vänner eller njuta av en fullständig middag — är Vincent ditt ställe." data-en="At Vincent Vin &amp; Bar you are met with wood-fired pizzas, homemade pasta and a carefully selected wine assortment. We are a piece of Södermalm — relaxed, welcoming and with our heart in the right place. Whether you want a quick lunch, a glass of wine with friends or a full dinner — Vincent is your place.">På Vincent Vin &amp; Bar möts du av vedugnsrostade pizzor, hemlagad pasta och ett noga utvalt vinsortiment. Vi är ett stycke Södermalm — avslappnat, välkomnande och med hjärtat på rätt ställe. Oavsett om du vill äta en snabb lunch, ta ett glas vin med vänner eller njuta av en fullständig middag — är Vincent ditt ställe.</p>
+        <p class="about-body" data-sv="Allt började med två bröder och en gemensam kärlek till god mat, gott vin och varma möten. Efter mer än 20 år i restaurangbranschen — från köken i Italien till Stockholms livligaste kvarter — bestämde de sig för att förverkliga sin dröm: en liten, ärlig vinbar och italiensk restaurang på hjärtat av Södermalm. På Vincent rullar vi degen för hand varje morgon, väljer de färskaste ingredienserna och bakar varje pizza i vedugnen tills den är gyllene och perfekt. Vinet är lika omsorgsfullt utvalt — flaska för flaska, smak för smak. Här är du alltid mer än en gäst. Du är en del av familjen." data-en="It all began with two brothers and a shared love of good food, fine wine and warm gatherings. After more than 20 years in the restaurant business — from the kitchens of Italy to Stockholm's liveliest neighbourhoods — they decided to make their dream come true: a small, honest wine bar and Italian restaurant in the heart of Södermalm. At Vincent we roll the dough by hand every morning, choose the freshest ingredients and bake every pizza in the wood-fired oven until golden and perfect. The wine is just as carefully selected — bottle by bottle, taste by taste. Here you are always more than a guest. You are part of the family.">Allt började med två bröder och en gemensam kärlek till god mat, gott vin och varma möten. Efter mer än 20 år i restaurangbranschen — från köken i Italien till Stockholms livligaste kvarter — bestämde de sig för att förverkliga sin dröm: en liten, ärlig vinbar och italiensk restaurang på hjärtat av Södermalm. På Vincent rullar vi degen för hand varje morgon, väljer de färskaste ingredienserna och bakar varje pizza i vedugnen tills den är gyllene och perfekt. Vinet är lika omsorgsfullt utvalt — flaska för flaska, smak för smak. Här är du alltid mer än en gäst. Du är en del av familjen.</p>
         <div class="about-stats">
           <div>
             <span class="about-stat-num">200+</span>
@@ -1346,21 +1336,21 @@
         <div class="wine-card-name">Chianti Classico</div>
         <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-          <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
-          <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-          <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-          <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
+          <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
+          <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
+          <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
         </svg>
         <div class="wine-card-desc" data-sv="Körsbär och viola, perfekt till pizza och pasta. En klassiker från Toscana." data-en="Cherry and violet, perfect with pizza and pasta. A classic from Tuscany.">Körsbär och viola, perfekt till pizza och pasta. En klassiker från Toscana.</div>
         <div class="wine-card-price">395 kr / flaska</div>
@@ -1370,21 +1360,21 @@
         <div class="wine-card-name">Pinot Grigio</div>
         <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-          <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
-          <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-          <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-          <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
+          <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
+          <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
+          <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
         </svg>
         <div class="wine-card-desc" data-sv="Friskt och mineraliskt med citrus. En perfekt aperitif eller till skaldjur." data-en="Fresh and mineral with citrus. A perfect aperitif or with seafood.">Friskt och mineraliskt med citrus. En perfekt aperitif eller till skaldjur.</div>
         <div class="wine-card-price">375 kr / flaska</div>
@@ -1394,21 +1384,21 @@
         <div class="wine-card-name">Rosé de Provence</div>
         <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-          <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
-          <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
-          <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-          <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
-          <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
-          <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
+          <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
+          <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
+          <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+          <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
         </svg>
         <div class="wine-card-desc" data-sv="Hallon och persika, elegant och lätt. Sommarens självklara val." data-en="Raspberry and peach, elegant and light. The obvious summer choice.">Hallon och persika, elegant och lätt. Sommarens självklara val.</div>
         <div class="wine-card-price">385 kr / flaska</div>
@@ -1557,21 +1547,21 @@
   <div style="margin-bottom:16px; display:flex; flex-direction:column; align-items:center; gap:12px;">
     <svg width="36" height="54" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.6">
       <rect x="1" y="1" width="42" height="64" stroke="#F7F0E6" stroke-width="1.3" fill="none"/>
-      <line x1="1" y1="23" x2="43" y2="23" stroke="#F7F0E6" stroke-width="1.1"/>
-      <line x1="1" y1="43" x2="43" y2="43" stroke="#F7F0E6" stroke-width="1.1"/>
-      <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
-      <line x1="22" y1="20" x2="22" y2="22" stroke="#F7F0E6" stroke-width="1.1"/>
-      <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#F7F0E6" stroke-width="1.1" stroke-linecap="round"/>
-      <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#F7F0E6" stroke-width="1.1" stroke-linecap="round"/>
-      <line x1="16" y1="27" x2="28" y2="27" stroke="#F7F0E6" stroke-width="1.2" stroke-linecap="round"/>
-      <line x1="22" y1="27" x2="22" y2="30" stroke="#F7F0E6" stroke-width="1.1"/>
-      <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#F7F0E6" stroke-width="1.1" stroke-linecap="round"/>
-      <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
-      <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1"/>
-      <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
-      <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1"/>
-      <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
-      <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1"/>
+      <line x1="1" y1="24" x2="43" y2="24" stroke="#F7F0E6" stroke-width="1"/>
+      <line x1="1" y1="45" x2="43" y2="45" stroke="#F7F0E6" stroke-width="1"/>
+      <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#F7F0E6" stroke-width="1" fill="none"/>
+      <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
+      <path d="M5 22 C9 21 12 19 15 16.5" stroke="#F7F0E6" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M15 16.5 L16.5 11.5" stroke="#F7F0E6" stroke-width="1" stroke-linecap="round"/>
+      <path d="M16.6 17 L18.6 12.5" stroke="#F7F0E6" stroke-width="1" stroke-linecap="round"/>
+      <path d="M18.2 17.5 L20.5 13.5" stroke="#F7F0E6" stroke-width="1" stroke-linecap="round"/>
+      <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#F7F0E6" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <line x1="15" y1="29" x2="29" y2="29" stroke="#F7F0E6" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="22" y1="29" x2="22" y2="32" stroke="#F7F0E6" stroke-width="1.1"/>
+      <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#F7F0E6" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
+      <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
+      <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
     </svg>
     <div>
       <div class="footer-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</div>
