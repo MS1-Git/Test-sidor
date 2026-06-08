@@ -63,7 +63,7 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
       text-decoration: none;
       cursor: pointer;
     }
@@ -83,8 +83,9 @@
       letter-spacing: 0.4em;
       color: var(--wine2);
       text-transform: uppercase;
-      margin-top: 2px;
+      margin-top: 4px;
     }
+    .vincent-logo-svg { flex-shrink: 0; }
 
     .nav-links {
       display: flex;
@@ -974,11 +975,42 @@
 <!-- ===== NAV ===== -->
 <nav id="main-nav">
   <a class="nav-logo" onclick="scrollToTop()">
-    <svg width="28" height="36" viewBox="0 0 28 36" fill="none">
-      <path d="M14 2C10 2 6 6 5 10L8 22H20L23 10C22 6 18 2 14 2Z" fill="none" stroke="#7B1A2E" stroke-width="1.2"/>
-      <rect x="13" y="22" width="2" height="10" fill="#7B1A2E" rx="1"/>
-      <rect x="9" y="32" width="10" height="1.5" rx="0.75" fill="#7B1A2E"/>
-      <ellipse cx="14" cy="14" rx="5" ry="6" fill="#7B1A2E" opacity="0.08"/>
+    <!-- Vincent logo: three-panel rectangle — glass+hand / corkscrew / bottles -->
+    <svg class="vincent-logo-svg" width="44" height="66" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer frame -->
+      <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
+      <!-- Horizontal dividers -->
+      <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
+      <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
+
+      <!-- TOP PANEL: wine glass held by hand -->
+      <!-- Glass bowl -->
+      <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+      <!-- Glass stem -->
+      <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
+      <!-- Hand / arm — curved line under glass -->
+      <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+      <!-- Arm extending left -->
+      <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+
+      <!-- MIDDLE PANEL: corkscrew -->
+      <!-- Handle bar -->
+      <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Vertical shaft top -->
+      <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
+      <!-- Spiral coil -->
+      <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+
+      <!-- BOTTOM PANEL: three wine bottles -->
+      <!-- Left bottle -->
+      <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+      <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+      <!-- Centre bottle -->
+      <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+      <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+      <!-- Right bottle -->
+      <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+      <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
     </svg>
     <div class="nav-logo-text">
       <span class="nav-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</span>
@@ -1312,10 +1344,23 @@
       <div class="wine-card">
         <div class="wine-card-region">Toscana, Italien</div>
         <div class="wine-card-name">Chianti Classico</div>
-        <svg width="32" height="48" viewBox="0 0 28 36" fill="none" style="margin:8px auto 16px;display:block;">
-          <path d="M14 2C10 2 6 6 5 10L8 22H20L23 10C22 6 18 2 14 2Z" fill="none" stroke="#7B1A2E" stroke-width="1.2"/>
-          <rect x="13" y="22" width="2" height="10" fill="#7B1A2E" rx="1"/>
-          <rect x="9" y="32" width="10" height="1.5" rx="0.75" fill="#7B1A2E"/>
+        <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
+          <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
+          <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
         </svg>
         <div class="wine-card-desc" data-sv="Körsbär och viola, perfekt till pizza och pasta. En klassiker från Toscana." data-en="Cherry and violet, perfect with pizza and pasta. A classic from Tuscany.">Körsbär och viola, perfekt till pizza och pasta. En klassiker från Toscana.</div>
         <div class="wine-card-price">395 kr / flaska</div>
@@ -1323,10 +1368,23 @@
       <div class="wine-card">
         <div class="wine-card-region">Veneto, Italien</div>
         <div class="wine-card-name">Pinot Grigio</div>
-        <svg width="32" height="48" viewBox="0 0 28 36" fill="none" style="margin:8px auto 16px;display:block;">
-          <path d="M14 2C10 2 6 6 5 10L8 22H20L23 10C22 6 18 2 14 2Z" fill="none" stroke="#7B1A2E" stroke-width="1.2"/>
-          <rect x="13" y="22" width="2" height="10" fill="#7B1A2E" rx="1"/>
-          <rect x="9" y="32" width="10" height="1.5" rx="0.75" fill="#7B1A2E"/>
+        <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
+          <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
+          <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
         </svg>
         <div class="wine-card-desc" data-sv="Friskt och mineraliskt med citrus. En perfekt aperitif eller till skaldjur." data-en="Fresh and mineral with citrus. A perfect aperitif or with seafood.">Friskt och mineraliskt med citrus. En perfekt aperitif eller till skaldjur.</div>
         <div class="wine-card-price">375 kr / flaska</div>
@@ -1334,10 +1392,23 @@
       <div class="wine-card">
         <div class="wine-card-region">Provence, Frankrike</div>
         <div class="wine-card-name">Rosé de Provence</div>
-        <svg width="32" height="48" viewBox="0 0 28 36" fill="none" style="margin:8px auto 16px;display:block;">
-          <path d="M14 2C10 2 6 6 5 10L8 22H20L23 10C22 6 18 2 14 2Z" fill="none" stroke="#7B1A2E" stroke-width="1.2"/>
-          <rect x="13" y="22" width="2" height="10" fill="#7B1A2E" rx="1"/>
-          <rect x="9" y="32" width="10" height="1.5" rx="0.75" fill="#7B1A2E"/>
+        <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
+          <line x1="1" y1="23" x2="43" y2="23" stroke="#7B1A2E" stroke-width="1.1"/>
+          <line x1="1" y1="43" x2="43" y2="43" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <line x1="22" y1="20" x2="22" y2="22" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <line x1="16" y1="27" x2="28" y2="27" stroke="#7B1A2E" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="22" y1="27" x2="22" y2="30" stroke="#7B1A2E" stroke-width="1.1"/>
+          <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#7B1A2E" stroke-width="1.1" stroke-linecap="round"/>
+          <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
+          <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1.1"/>
+          <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#7B1A2E" stroke-width="1"/>
         </svg>
         <div class="wine-card-desc" data-sv="Hallon och persika, elegant och lätt. Sommarens självklara val." data-en="Raspberry and peach, elegant and light. The obvious summer choice.">Hallon och persika, elegant och lätt. Sommarens självklara val.</div>
         <div class="wine-card-price">385 kr / flaska</div>
@@ -1483,9 +1554,29 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div style="margin-bottom:8px;">
-    <div class="footer-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</div>
-    <div class="footer-logo-sub" data-sv="VIN &amp; BAR" data-en="WINE &amp; BAR">VIN &amp; BAR</div>
+  <div style="margin-bottom:16px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+    <svg width="36" height="54" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.6">
+      <rect x="1" y="1" width="42" height="64" stroke="#F7F0E6" stroke-width="1.3" fill="none"/>
+      <line x1="1" y1="23" x2="43" y2="23" stroke="#F7F0E6" stroke-width="1.1"/>
+      <line x1="1" y1="43" x2="43" y2="43" stroke="#F7F0E6" stroke-width="1.1"/>
+      <path d="M22 5 C17 5 14 8 14 13 C14 17 17 20 22 20 C27 20 30 17 30 13 C30 8 27 5 22 5Z" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
+      <line x1="22" y1="20" x2="22" y2="22" stroke="#F7F0E6" stroke-width="1.1"/>
+      <path d="M10 21 Q14 18 18 19 Q22 20 26 19 Q30 18 34 21" fill="none" stroke="#F7F0E6" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M10 21 Q8 21 7 20 Q6 19 7 18" fill="none" stroke="#F7F0E6" stroke-width="1.1" stroke-linecap="round"/>
+      <line x1="16" y1="27" x2="28" y2="27" stroke="#F7F0E6" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="22" y1="27" x2="22" y2="30" stroke="#F7F0E6" stroke-width="1.1"/>
+      <path d="M22 30 C26 30 27 32 24 33 C21 34 19 36 22 37 C25 38 27 39 24 40 C22 41 20 41 22 42" fill="none" stroke="#F7F0E6" stroke-width="1.1" stroke-linecap="round"/>
+      <rect x="8" y="48" width="7" height="13" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
+      <rect x="10" y="45" width="3" height="4" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1"/>
+      <rect x="18.5" y="47" width="7" height="14" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
+      <rect x="20.5" y="44" width="3" height="4" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1"/>
+      <rect x="29" y="48" width="7" height="13" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1.1"/>
+      <rect x="31" y="45" width="3" height="4" rx="1" fill="none" stroke="#F7F0E6" stroke-width="1"/>
+    </svg>
+    <div>
+      <div class="footer-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</div>
+      <div class="footer-logo-sub" data-sv="VIN &amp; BAR" data-en="WINE &amp; BAR">VIN &amp; BAR</div>
+    </div>
   </div>
   <p class="footer-tagline" data-sv="Vin &amp; Bar — Östgötagatan 85, Södermalm, Stockholm" data-en="Wine &amp; Bar — Östgötagatan 85, Södermalm, Stockholm">Vin &amp; Bar — Östgötagatan 85, Södermalm, Stockholm</p>
   <ul class="footer-links">
