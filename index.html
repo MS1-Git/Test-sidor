@@ -975,32 +975,93 @@
 <!-- ===== NAV ===== -->
 <nav id="main-nav">
   <a class="nav-logo" onclick="scrollToTop()">
-    <!-- Vincent logo: three-panel rectangle — glass cradled by hand / corkscrew / three bottles -->
-    <svg class="vincent-logo-svg" width="44" height="66" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer frame + panel dividers -->
-      <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-      <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
-      <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
+    <!--
+      VINCENT logo — pixel-faithful SVG recreation.
+      viewBox 0 0 108 162  (ratio ≈ 1 : 1.5, matching the brand image)
+      Three equal panels, each 54 units tall:
+        Panel 1 (y 0-54)  : wide tumbler glass cradled by a hand, arm from left
+        Panel 2 (y 54-108): T-bar corkscrew with tight helix
+        Panel 3 (y 108-162): three wine bottles (neck + shoulder + body)
+    -->
+    <svg class="vincent-logo-svg" width="46" height="69" viewBox="0 0 108 162" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- ── OUTER FRAME ── -->
+      <rect x="1.5" y="1.5" width="105" height="159" stroke="#7B1A2E" stroke-width="2" fill="none"/>
+      <!-- ── PANEL DIVIDERS ── -->
+      <line x1="1.5"  y1="54"  x2="106.5" y2="54"  stroke="#7B1A2E" stroke-width="1.6"/>
+      <line x1="1.5"  y1="108" x2="106.5" y2="108" stroke="#7B1A2E" stroke-width="1.6"/>
 
-      <!-- TOP PANEL: wine glass cradled by a hand -->
-      <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
-      <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-      <!-- arm + fanned fingers -->
-      <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-      <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-      <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-      <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- ════════════════════════════════════════
+           PANEL 1 — Wine glass + hand
+           Glass: wide-rimmed tumbler, upper-right quadrant
+           ════════════════════════════════════════ -->
+      <!-- Rim (flat top line) -->
+      <line x1="60" y1="8" x2="96" y2="8" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Left side of glass (slight taper inward toward base) -->
+      <line x1="60" y1="8" x2="63" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Right side of glass -->
+      <line x1="96" y1="8" x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Base of glass body -->
+      <line x1="63" y1="40" x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Glass foot/base — slightly wider than body -->
+      <line x1="58" y1="43" x2="98" y2="43" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
 
-      <!-- MIDDLE PANEL: corkscrew -->
-      <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
-      <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
-      <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <!-- ARM — enters from left edge around 75% down the panel, sweeps right -->
+      <path d="M2 46 C14 44 28 41 42 35" stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <!-- FINGERS — three lines fanning diagonally up toward the glass, from palm at ~(42,35) -->
+      <!-- Finger 1 (outermost, leftmost fan) -->
+      <path d="M42 35 C47 28 51 20 54 12" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <!-- Finger 2 (middle) -->
+      <path d="M44 33 C50 25 55 16 60 9"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <!-- Finger 3 (innermost, points toward rim right side) -->
+      <path d="M47 31 C54 22 60 13 66 8"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <!-- Thumb — curves around the right / base side of the glass -->
+      <path d="M50 36 C60 37 70 38 80 40" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
 
-      <!-- BOTTOM PANEL: three standing bottles -->
-      <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-      <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-      <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+      <!-- ════════════════════════════════════════
+           PANEL 2 — Corkscrew (T-handle + helix)
+           ════════════════════════════════════════ -->
+      <!-- T-bar handle (horizontal) -->
+      <line x1="28" y1="66" x2="80" y2="66" stroke="#7B1A2E" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Short vertical shaft from centre of T-bar -->
+      <line x1="54" y1="66" x2="54" y2="74" stroke="#7B1A2E" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Helix / corkscrew spiral (2.5 tight turns) -->
+      <path d="
+        M54 74
+        C64 74  68 79  62 83
+        C56 87  50 90  56 95
+        C62 100 66 104 60 107
+        C55 110 51 108 54 108
+      " stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- ════════════════════════════════════════
+           PANEL 3 — Three wine bottles
+           Dividers split panel into three equal columns: x=37 and x=71
+           Each bottle: rectangular neck centred in column, angled shoulders, tall body
+           ════════════════════════════════════════ -->
+      <!-- Column dividers -->
+      <line x1="37"  y1="108" x2="37"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+      <line x1="71"  y1="108" x2="71"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+
+      <!-- LEFT BOTTLE  (column x: 1.5 – 37) -->
+      <!-- Neck -->
+      <rect x="14" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+      <!-- Shoulder + body -->
+      <path d="M14 131 C10 135 8 138 8 142 L8 160 L29 160 L29 142 C29 138 27 135 23 131 Z"
+            stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+
+      <!-- CENTRE BOTTLE  (column x: 37 – 71, neck extends ~3 units higher) -->
+      <!-- Neck -->
+      <rect x="50" y="114" width="9" height="17" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+      <!-- Shoulder + body -->
+      <path d="M50 131 C46 135 44 138 44 142 L44 160 L65 160 L65 142 C65 138 63 135 59 131 Z"
+            stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+
+      <!-- RIGHT BOTTLE  (column x: 71 – 106.5) -->
+      <!-- Neck -->
+      <rect x="80" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+      <!-- Shoulder + body -->
+      <path d="M80 131 C76 135 74 138 74 142 L74 160 L95 160 L95 142 C95 138 93 135 89 131 Z"
+            stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
     </svg>
     <div class="nav-logo-text">
       <span class="nav-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</span>
@@ -1334,23 +1395,32 @@
       <div class="wine-card">
         <div class="wine-card-region">Toscana, Italien</div>
         <div class="wine-card-name">Chianti Classico</div>
-        <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-          <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
-          <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
-          <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
-          <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-          <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
-          <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
-          <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-          <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+        <svg width="32" height="48" viewBox="0 0 108 162" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="105" height="159" stroke="#7B1A2E" stroke-width="2" fill="none"/>
+          <line x1="1.5"  y1="54"  x2="106.5" y2="54"  stroke="#7B1A2E" stroke-width="1.6"/>
+          <line x1="1.5"  y1="108" x2="106.5" y2="108" stroke="#7B1A2E" stroke-width="1.6"/>
+          <line x1="60" y1="8"  x2="96" y2="8"  stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="60" y1="8"  x2="63" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="96" y1="8"  x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="63" y1="40" x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="58" y1="43" x2="98" y2="43" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M2 46 C14 44 28 41 42 35" stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <path d="M42 35 C47 28 51 20 54 12" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M44 33 C50 25 55 16 60 9"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M47 31 C54 22 60 13 66 8"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M50 36 C60 37 70 38 80 40" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <line x1="28" y1="66" x2="80" y2="66" stroke="#7B1A2E" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="54" y1="66" x2="54" y2="74" stroke="#7B1A2E" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M54 74 C64 74 68 79 62 83 C56 87 50 90 56 95 C62 100 66 104 60 107 C55 110 51 108 54 108"
+                stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="37"  y1="108" x2="37"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+          <line x1="71"  y1="108" x2="71"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+          <rect x="14" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M14 131 C10 135 8 138 8 142 L8 160 L29 160 L29 142 C29 138 27 135 23 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <rect x="50" y="114" width="9" height="17" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M50 131 C46 135 44 138 44 142 L44 160 L65 160 L65 142 C65 138 63 135 59 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <rect x="80" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M80 131 C76 135 74 138 74 142 L74 160 L95 160 L95 142 C95 138 93 135 89 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
         </svg>
         <div class="wine-card-desc" data-sv="Körsbär och viola, perfekt till pizza och pasta. En klassiker från Toscana." data-en="Cherry and violet, perfect with pizza and pasta. A classic from Tuscany.">Körsbär och viola, perfekt till pizza och pasta. En klassiker från Toscana.</div>
         <div class="wine-card-price">395 kr / flaska</div>
@@ -1358,23 +1428,32 @@
       <div class="wine-card">
         <div class="wine-card-region">Veneto, Italien</div>
         <div class="wine-card-name">Pinot Grigio</div>
-        <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-          <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
-          <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
-          <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
-          <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-          <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
-          <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
-          <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-          <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+        <svg width="32" height="48" viewBox="0 0 108 162" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="105" height="159" stroke="#7B1A2E" stroke-width="2" fill="none"/>
+          <line x1="1.5"  y1="54"  x2="106.5" y2="54"  stroke="#7B1A2E" stroke-width="1.6"/>
+          <line x1="1.5"  y1="108" x2="106.5" y2="108" stroke="#7B1A2E" stroke-width="1.6"/>
+          <line x1="60" y1="8"  x2="96" y2="8"  stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="60" y1="8"  x2="63" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="96" y1="8"  x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="63" y1="40" x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="58" y1="43" x2="98" y2="43" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M2 46 C14 44 28 41 42 35" stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <path d="M42 35 C47 28 51 20 54 12" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M44 33 C50 25 55 16 60 9"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M47 31 C54 22 60 13 66 8"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M50 36 C60 37 70 38 80 40" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <line x1="28" y1="66" x2="80" y2="66" stroke="#7B1A2E" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="54" y1="66" x2="54" y2="74" stroke="#7B1A2E" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M54 74 C64 74 68 79 62 83 C56 87 50 90 56 95 C62 100 66 104 60 107 C55 110 51 108 54 108"
+                stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="37"  y1="108" x2="37"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+          <line x1="71"  y1="108" x2="71"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+          <rect x="14" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M14 131 C10 135 8 138 8 142 L8 160 L29 160 L29 142 C29 138 27 135 23 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <rect x="50" y="114" width="9" height="17" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M50 131 C46 135 44 138 44 142 L44 160 L65 160 L65 142 C65 138 63 135 59 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <rect x="80" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M80 131 C76 135 74 138 74 142 L74 160 L95 160 L95 142 C95 138 93 135 89 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
         </svg>
         <div class="wine-card-desc" data-sv="Friskt och mineraliskt med citrus. En perfekt aperitif eller till skaldjur." data-en="Fresh and mineral with citrus. A perfect aperitif or with seafood.">Friskt och mineraliskt med citrus. En perfekt aperitif eller till skaldjur.</div>
         <div class="wine-card-price">375 kr / flaska</div>
@@ -1382,23 +1461,32 @@
       <div class="wine-card">
         <div class="wine-card-region">Provence, Frankrike</div>
         <div class="wine-card-name">Rosé de Provence</div>
-        <svg width="30" height="45" viewBox="0 0 44 66" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="42" height="64" stroke="#7B1A2E" stroke-width="1.3" fill="none"/>
-          <line x1="1" y1="24" x2="43" y2="24" stroke="#7B1A2E" stroke-width="1"/>
-          <line x1="1" y1="45" x2="43" y2="45" stroke="#7B1A2E" stroke-width="1"/>
-          <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#7B1A2E" stroke-width="1" fill="none"/>
-          <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M5 22 C9 21 12 19 15 16.5" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-          <path d="M15 16.5 L16.5 11.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M16.6 17 L18.6 12.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M18.2 17.5 L20.5 13.5" stroke="#7B1A2E" stroke-width="1" stroke-linecap="round"/>
-          <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#7B1A2E" stroke-width="1" fill="none" stroke-linecap="round"/>
-          <line x1="15" y1="29" x2="29" y2="29" stroke="#7B1A2E" stroke-width="1.3" stroke-linecap="round"/>
-          <line x1="22" y1="29" x2="22" y2="32" stroke="#7B1A2E" stroke-width="1.1"/>
-          <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#7B1A2E" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-          <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
-          <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#7B1A2E" stroke-width="1.1" fill="none"/>
+        <svg width="32" height="48" viewBox="0 0 108 162" fill="none" style="margin:10px auto 18px;display:block;" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="105" height="159" stroke="#7B1A2E" stroke-width="2" fill="none"/>
+          <line x1="1.5"  y1="54"  x2="106.5" y2="54"  stroke="#7B1A2E" stroke-width="1.6"/>
+          <line x1="1.5"  y1="108" x2="106.5" y2="108" stroke="#7B1A2E" stroke-width="1.6"/>
+          <line x1="60" y1="8"  x2="96" y2="8"  stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="60" y1="8"  x2="63" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="96" y1="8"  x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="63" y1="40" x2="93" y2="40" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="58" y1="43" x2="98" y2="43" stroke="#7B1A2E" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M2 46 C14 44 28 41 42 35" stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <path d="M42 35 C47 28 51 20 54 12" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M44 33 C50 25 55 16 60 9"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M47 31 C54 22 60 13 66 8"  stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M50 36 C60 37 70 38 80 40" stroke="#7B1A2E" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <line x1="28" y1="66" x2="80" y2="66" stroke="#7B1A2E" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="54" y1="66" x2="54" y2="74" stroke="#7B1A2E" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M54 74 C64 74 68 79 62 83 C56 87 50 90 56 95 C62 100 66 104 60 107 C55 110 51 108 54 108"
+                stroke="#7B1A2E" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="37"  y1="108" x2="37"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+          <line x1="71"  y1="108" x2="71"  y2="160.5" stroke="#7B1A2E" stroke-width="1.5"/>
+          <rect x="14" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M14 131 C10 135 8 138 8 142 L8 160 L29 160 L29 142 C29 138 27 135 23 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <rect x="50" y="114" width="9" height="17" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M50 131 C46 135 44 138 44 142 L44 160 L65 160 L65 142 C65 138 63 135 59 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <rect x="80" y="118" width="9" height="13" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
+          <path d="M80 131 C76 135 74 138 74 142 L74 160 L95 160 L95 142 C95 138 93 135 89 131 Z" stroke="#7B1A2E" stroke-width="1.2" fill="none"/>
         </svg>
         <div class="wine-card-desc" data-sv="Hallon och persika, elegant och lätt. Sommarens självklara val." data-en="Raspberry and peach, elegant and light. The obvious summer choice.">Hallon och persika, elegant och lätt. Sommarens självklara val.</div>
         <div class="wine-card-price">385 kr / flaska</div>
@@ -1545,23 +1633,36 @@
 <!-- ===== FOOTER ===== -->
 <footer>
   <div style="margin-bottom:16px; display:flex; flex-direction:column; align-items:center; gap:12px;">
-    <svg width="36" height="54" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.6">
-      <rect x="1" y="1" width="42" height="64" stroke="#F7F0E6" stroke-width="1.3" fill="none"/>
-      <line x1="1" y1="24" x2="43" y2="24" stroke="#F7F0E6" stroke-width="1"/>
-      <line x1="1" y1="45" x2="43" y2="45" stroke="#F7F0E6" stroke-width="1"/>
-      <ellipse cx="22" cy="6" rx="5.2" ry="1.5" stroke="#F7F0E6" stroke-width="1" fill="none"/>
-      <path d="M16.8 6.5 C16.8 12.5 18.6 16 22 16 C25.4 16 27.2 12.5 27.2 6.5" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
-      <path d="M5 22 C9 21 12 19 15 16.5" stroke="#F7F0E6" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <path d="M15 16.5 L16.5 11.5" stroke="#F7F0E6" stroke-width="1" stroke-linecap="round"/>
-      <path d="M16.6 17 L18.6 12.5" stroke="#F7F0E6" stroke-width="1" stroke-linecap="round"/>
-      <path d="M18.2 17.5 L20.5 13.5" stroke="#F7F0E6" stroke-width="1" stroke-linecap="round"/>
-      <path d="M13.5 17.5 C13 19 12 20 10.5 20.5" stroke="#F7F0E6" stroke-width="1" fill="none" stroke-linecap="round"/>
-      <line x1="15" y1="29" x2="29" y2="29" stroke="#F7F0E6" stroke-width="1.3" stroke-linecap="round"/>
-      <line x1="22" y1="29" x2="22" y2="32" stroke="#F7F0E6" stroke-width="1.1"/>
-      <path d="M22 32 C25.5 32 25.5 34 22.5 34.5 C19.5 35 19.5 37 22.5 37.5 C25.5 38 25.5 40 22 41" stroke="#F7F0E6" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <path d="M9 64 L9 51 Q9 49 10.2 48.4 L10.2 47 L13.8 47 L13.8 48.4 Q15 49 15 51 L15 64" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
-      <path d="M19.2 64 L19.2 51 Q19.2 49 20.4 48.4 L20.4 47 L24 47 L24 48.4 Q25.2 49 25.2 51 L25.2 64" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
-      <path d="M29 64 L29 51 Q29 49 30.2 48.4 L30.2 47 L33.8 47 L33.8 48.4 Q35 49 35 51 L35 64" stroke="#F7F0E6" stroke-width="1.1" fill="none"/>
+    <svg width="40" height="60" viewBox="0 0 108 162" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.65">
+      <rect x="1.5" y="1.5" width="105" height="159" stroke="#F7F0E6" stroke-width="2" fill="none"/>
+      <line x1="1.5"  y1="54"  x2="106.5" y2="54"  stroke="#F7F0E6" stroke-width="1.6"/>
+      <line x1="1.5"  y1="108" x2="106.5" y2="108" stroke="#F7F0E6" stroke-width="1.6"/>
+      <!-- Glass -->
+      <line x1="60" y1="8"  x2="96" y2="8"  stroke="#F7F0E6" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="60" y1="8"  x2="63" y2="40" stroke="#F7F0E6" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="96" y1="8"  x2="93" y2="40" stroke="#F7F0E6" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="63" y1="40" x2="93" y2="40" stroke="#F7F0E6" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="58" y1="43" x2="98" y2="43" stroke="#F7F0E6" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Arm + fingers -->
+      <path d="M2 46 C14 44 28 41 42 35" stroke="#F7F0E6" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <path d="M42 35 C47 28 51 20 54 12" stroke="#F7F0E6" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <path d="M44 33 C50 25 55 16 60 9"  stroke="#F7F0E6" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <path d="M47 31 C54 22 60 13 66 8"  stroke="#F7F0E6" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <path d="M50 36 C60 37 70 38 80 40" stroke="#F7F0E6" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <!-- Corkscrew -->
+      <line x1="28" y1="66" x2="80" y2="66" stroke="#F7F0E6" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="54" y1="66" x2="54" y2="74" stroke="#F7F0E6" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M54 74 C64 74 68 79 62 83 C56 87 50 90 56 95 C62 100 66 104 60 107 C55 110 51 108 54 108"
+            stroke="#F7F0E6" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Bottles -->
+      <line x1="37"  y1="108" x2="37"  y2="160.5" stroke="#F7F0E6" stroke-width="1.5"/>
+      <line x1="71"  y1="108" x2="71"  y2="160.5" stroke="#F7F0E6" stroke-width="1.5"/>
+      <rect x="14" y="118" width="9" height="13" stroke="#F7F0E6" stroke-width="1.2" fill="none"/>
+      <path d="M14 131 C10 135 8 138 8 142 L8 160 L29 160 L29 142 C29 138 27 135 23 131 Z" stroke="#F7F0E6" stroke-width="1.2" fill="none"/>
+      <rect x="50" y="114" width="9" height="17" stroke="#F7F0E6" stroke-width="1.2" fill="none"/>
+      <path d="M50 131 C46 135 44 138 44 142 L44 160 L65 160 L65 142 C65 138 63 135 59 131 Z" stroke="#F7F0E6" stroke-width="1.2" fill="none"/>
+      <rect x="80" y="118" width="9" height="13" stroke="#F7F0E6" stroke-width="1.2" fill="none"/>
+      <path d="M80 131 C76 135 74 138 74 142 L74 160 L95 160 L95 142 C95 138 93 135 89 131 Z" stroke="#F7F0E6" stroke-width="1.2" fill="none"/>
     </svg>
     <div>
       <div class="footer-logo-name" data-sv="VINCENT" data-en="VINCENT">VINCENT</div>
