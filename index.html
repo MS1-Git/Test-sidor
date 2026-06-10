@@ -1164,7 +1164,7 @@
       const vh = window.innerHeight;
       // p=0 when wrap top enters viewport bottom, p=1 once wrap is centered/in frame
       const start = vh;                    // wrap top at bottom edge
-      const end   = vh * 0.45;             // wrap top reaches upper-middle → animation done
+      const end   = vh * 0.80;             // wrap top just inside viewport → animation already done
       const p = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
 
       const a1 = ph(p, 0.00, 0.38);
