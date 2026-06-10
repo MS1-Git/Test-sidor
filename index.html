@@ -1164,8 +1164,10 @@
       const vh = window.innerHeight;
       // p=0 when wrap top enters viewport bottom, p=1 once the whole wrap is in view
       const startB = vh + rect.height;     // wrap bottom when its top is at the bottom edge
-      const endB   = vh;                   // wrap bottom at viewport bottom → fully visible, done
-      const p = Math.min(1, Math.max(0, (startB - rect.bottom) / (startB - endB)));
+      const endB   = vh;                   // wrap bottom at viewport bottom → fully visible
+      const raw    = (startB - rect.bottom) / (startB - endB);
+      // 1.5x speed: animation reaches 100% well before the section is fully in view
+      const p = Math.min(1, Math.max(0, raw * 1.5));
 
       const a1 = ph(p, 0.00, 0.38);
       bottle.setAttribute('transform', `rotate(${lr(30,65,a1)} 185 262)`);
