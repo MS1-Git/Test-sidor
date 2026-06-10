@@ -53,7 +53,7 @@
     nav .nav-cta { background:var(--wine); }
 
     .nav-logo { cursor:pointer; display:block; }
-    .nav-logo-img { height:54px; width:auto; display:block; transition:filter .3s; }
+    .nav-logo-img { height:70px; width:auto; display:block; transition:filter .3s; }
     /* On transparent nav the full-colour logo is fine; over dark it looks great */
 
     .nav-links { display:flex; gap:36px; list-style:none; }
@@ -195,7 +195,7 @@
     .about-img-wrap { position:relative; }
     .about-img-frame { position:absolute; top:-16px; left:-16px; right:16px; bottom:16px; border:1.5px solid var(--border); z-index:0; }
     .about-img-wrap img { position:relative; z-index:1; width:100%; height:520px; object-fit:cover; display:block; }
-    .about-pour { position:relative; z-index:1; width:100%; height:520px; border:0; display:block; background:#FAF6F0; }
+    .about-pour { position:relative; z-index:1; width:100%; height:520px; display:flex; align-items:center; justify-content:center; background:#FAF6F0; }
     .about-read-more { overflow:hidden; transition:max-height .4s ease; }
     .about-read-more.collapsed { max-height:120px; }
     .about-read-more.expanded { max-height:1000px; }
@@ -518,45 +518,55 @@
   </div>
 </section>
 
-<!-- ═══════════════════ INFO STRIP ═══════════════════ -->
-<div class="info-strip">
-  <div class="info-strip-item">
-    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-    <div class="info-strip-text">
-      <span class="info-strip-label" data-sv="Adress" data-en="Address">Adress</span>
-      <span class="info-strip-val">Östgötagatan 85, Södermalm</span>
-    </div>
-  </div>
-  <div class="info-strip-item">
-    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-    <div class="info-strip-text">
-      <span class="info-strip-label" data-sv="Öppettider" data-en="Hours">Öppettider</span>
-      <span class="info-strip-val" data-sv="Tis–Sön från 12:00" data-en="Tue–Sun from 12:00">Tis–Sön från 12:00</span>
-    </div>
-  </div>
-  <div class="info-strip-item">
-    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 .01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-    <div class="info-strip-text">
-      <span class="info-strip-label" data-sv="Telefon" data-en="Phone">Telefon</span>
-      <span class="info-strip-val">08-740 85 85</span>
-    </div>
-  </div>
-  <div class="info-strip-item">
-    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-    <div class="info-strip-text">
-      <span class="info-strip-label" data-sv="Vi serverar" data-en="We serve">Vi serverar</span>
-      <span class="info-strip-val" data-sv="Pizza · Pasta · Vin" data-en="Pizza · Pasta · Wine">Pizza · Pasta · Vin</span>
-    </div>
-  </div>
-</div>
-
 <!-- ═══════════════════ ABOUT ═══════════════════ -->
 <section id="about">
   <div class="section-inner">
     <div class="about-grid reveal">
       <div class="about-img-wrap">
         <div class="about-img-frame"></div>
-        <iframe src="assets/pour-animation.html" class="about-pour" title="Häll upp ett glas hos Vincent" loading="lazy"></iframe>
+        <div class="about-pour" id="pour-wrap">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap">
+          <svg id="pour-svg" viewBox="0 0 680 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;overflow:visible;">
+            <defs>
+              <clipPath id="bowlClip">
+                <path d="M438,390 C438,452 470,500 470,540 C470,552 484,556 518,556 C552,556 566,552 566,540 C566,500 598,452 598,390 Z"/>
+              </clipPath>
+            </defs>
+            <!-- BOTTLE -->
+            <g id="pour-bottle" stroke="#8B2035" stroke-width="2.8" fill="none" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M171,70 L199,70 L199,104 L171,104 Z" fill="#8B2035"/>
+              <path d="M173,104 L173,150 M197,104 L197,150"/>
+              <path d="M173,150 C173,178 150,196 150,236 L150,432 C150,452 158,460 185,460 C212,460 220,452 220,432 L220,236 C220,196 197,178 197,150 Z"/>
+              <rect x="150" y="300" width="70" height="96" rx="3"/>
+              <line x1="160" y1="316" x2="210" y2="316"/>
+              <line x1="160" y1="384" x2="210" y2="384"/>
+              <ellipse cx="185" cy="372" rx="9" ry="5"/>
+              <text font-family="'Dancing Script','Brush Script MT',cursive" font-weight="600" font-size="22" fill="#8B2035" x="185" y="344" text-anchor="middle">Bistro</text>
+              <text font-family="'Dancing Script','Brush Script MT',cursive" font-weight="600" font-size="18" fill="#8B2035" x="185" y="368" text-anchor="middle">Vincent</text>
+            </g>
+            <!-- POUR STREAM -->
+            <g id="pour-stream" fill="none" stroke-linecap="round">
+              <path class="pour-path" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="32" opacity="0.10"/>
+              <path class="pour-path" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="18" opacity="0.28"/>
+              <path class="pour-path" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="9"  opacity="0.60"/>
+              <path class="pour-path" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="4"  opacity="0.83"/>
+              <path class="pour-path" d="M383,170 C440,230 498,360 500,390" stroke="#c45070" stroke-width="1.2" opacity="0.38"/>
+            </g>
+            <!-- WINE GLASS -->
+            <g id="pour-glass" opacity="0">
+              <g clip-path="url(#bowlClip)">
+                <rect id="pour-wine-rect" x="430" y="556" width="176" height="0" fill="#8B2035" opacity="0.83"/>
+              </g>
+              <path id="pour-wine-surface" fill="none" stroke="#8B2035" stroke-width="2" opacity="0" stroke-linecap="round"/>
+              <g stroke="#8B2035" stroke-width="2.8" fill="none" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M438,390 C438,452 470,500 470,540 C470,552 484,556 518,556 C552,556 566,552 566,540 C566,500 598,452 598,390 M438,390 L598,390"/>
+                <line x1="513" y1="556" x2="513" y2="654"/>
+                <line x1="523" y1="556" x2="523" y2="654"/>
+                <path d="M470,678 C470,664 490,656 518,656 C546,656 566,664 566,678 C566,680 552,680 518,680 C484,680 470,680 470,678 Z"/>
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
       <div class="about-text">
         <p class="eyebrow" data-sv="Vår historia" data-en="Our story">Vår historia</p>
@@ -827,6 +837,38 @@
   </div>
 </section>
 
+<!-- ═══════════════════ INFO STRIP ═══════════════════ -->
+<div class="info-strip">
+  <div class="info-strip-item">
+    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    <div class="info-strip-text">
+      <span class="info-strip-label" data-sv="Adress" data-en="Address">Adress</span>
+      <span class="info-strip-val">Östgötagatan 85, Södermalm</span>
+    </div>
+  </div>
+  <div class="info-strip-item">
+    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <div class="info-strip-text">
+      <span class="info-strip-label" data-sv="Öppettider" data-en="Hours">Öppettider</span>
+      <span class="info-strip-val" data-sv="Tis–Sön från 12:00" data-en="Tue–Sun from 12:00">Tis–Sön från 12:00</span>
+    </div>
+  </div>
+  <div class="info-strip-item">
+    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 .01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    <div class="info-strip-text">
+      <span class="info-strip-label" data-sv="Telefon" data-en="Phone">Telefon</span>
+      <span class="info-strip-val">08-740 85 85</span>
+    </div>
+  </div>
+  <div class="info-strip-item">
+    <svg class="info-strip-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+    <div class="info-strip-text">
+      <span class="info-strip-label" data-sv="Vi serverar" data-en="We serve">Vi serverar</span>
+      <span class="info-strip-val" data-sv="Pizza · Pasta · Vin" data-en="Pizza · Pasta · Wine">Pizza · Pasta · Vin</span>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section id="contact">
   <div class="section-inner">
@@ -982,7 +1024,7 @@
 
   // ── Nav ──
   const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); updateClink(); }, { passive: true });
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); updateClink(); updatePour(); }, { passive: true });
   function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
   function toggleMobile() { document.getElementById('mobile-menu').classList.toggle('open'); }
   function closeMobile()  { document.getElementById('mobile-menu').classList.remove('open'); }
@@ -1084,6 +1126,68 @@
     document.getElementById('sparkle').style.opacity = prog >= 0.97 ? '1' : '0';
   }
   updateClink();
+
+  // ── Pour animation (scroll-driven, synced to main page scroll) ──
+  (function() {
+    function eio(t){ return t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t; }
+    function ph(p, s, e){ if(p<=s) return 0; if(p>=e) return 1; return eio((p-s)/(e-s)); }
+    function lr(a,b,t){ return a+(b-a)*t; }
+
+    const bottle      = document.getElementById('pour-bottle');
+    const glass       = document.getElementById('pour-glass');
+    const pourPaths   = document.querySelectorAll('.pour-path');
+    const wineRect    = document.getElementById('pour-wine-rect');
+    const wineSurface = document.getElementById('pour-wine-surface');
+    const wrap        = document.getElementById('pour-wrap');
+
+    if (!bottle || !glass || !wrap) return;
+
+    // measure path length once SVG is in DOM
+    let pourLen = 0;
+    function initPour() {
+      pourLen = pourPaths[0] ? pourPaths[0].getTotalLength() : 280;
+      pourPaths.forEach(p => {
+        p.style.strokeDasharray  = pourLen;
+        p.style.strokeDashoffset = pourLen;
+      });
+    }
+    if (document.readyState === 'complete') initPour();
+    else window.addEventListener('load', initPour);
+
+    const Y_WAIST=556, Y_BULGE=462, Y_RIM=390;
+    const HW_WAIST=20, HW_BULGE=94, HW_RIM=80, CX=518;
+    function hw(y){ return y>=Y_BULGE ? lr(HW_WAIST,HW_BULGE,(Y_WAIST-y)/(Y_WAIST-Y_BULGE)) : lr(HW_BULGE,HW_RIM,(Y_BULGE-y)/(Y_BULGE-Y_RIM)); }
+
+    // Map global scroll to animation phases relative to the wrap element position
+    window.updatePour = function() {
+      const rect = wrap.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // p=0 when wrap enters viewport bottom, p=1 when wrap exits viewport top
+      const p = Math.min(1, Math.max(0, 1 - (rect.top + rect.height) / (vh + rect.height)));
+
+      const a1 = ph(p, 0.00, 0.38);
+      bottle.setAttribute('transform', `rotate(${lr(30,65,a1)} 185 262)`);
+
+      glass.setAttribute('opacity', ph(p, 0.34, 0.55));
+
+      const off = pourLen * (1 - ph(p, 0.50, 0.72));
+      pourPaths.forEach(pp => pp.style.strokeDashoffset = off);
+
+      const a4 = ph(p, 0.66, 0.97);
+      const fillH = (Y_WAIST - Y_RIM) * 0.60 * a4;
+      const fillTop = Y_WAIST - fillH;
+      wineRect.setAttribute('y', fillTop);
+      wineRect.setAttribute('height', fillH);
+      if (a4 > 0) {
+        const h = hw(fillTop), x1 = CX-h, x2 = CX+h;
+        wineSurface.setAttribute('d', `M${x1},${fillTop} Q${CX},${fillTop-6} ${x2},${fillTop}`);
+        wineSurface.setAttribute('opacity', 0.9);
+      } else {
+        wineSurface.setAttribute('opacity', 0);
+      }
+    };
+    window.updatePour();
+  })();
 
   // ── Highlight today in hours table ──
   const days = ['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
