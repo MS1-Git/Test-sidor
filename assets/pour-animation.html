@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincent — Häll upp ett glas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#FAF6F0; }
+  body { height:500vh; }
+  .sticky {
+    position:sticky;
+    top:0;
+    height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  svg {
+    width:min(620px, 96vw);
+    height:auto;
+    overflow:visible;
+    display:block;
+  }
+  .label-script {
+    font-family:'Dancing Script','Brush Script MT',cursive;
+    font-weight:600;
+    fill:#8B2035;
+  }
+</style>
+</head>
+<body>
+
+  <div class="sticky">
+    <svg viewBox="0 0 680 700" xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <!-- Clip matching the bowl interior -->
+        <clipPath id="bowlClip">
+          <path d="M438,390
+                   C438,452 470,500 470,540
+                   C470,552 484,556 518,556
+                   C552,556 566,552 566,540
+                   C566,500 598,452 598,390
+                   Z"/>
+        </clipPath>
+      </defs>
+
+      <!-- ══════════ BOTTLE ══════════ -->
+      <g id="bottle" stroke="#8B2035" stroke-width="2.8" fill="none"
+         stroke-linejoin="round" stroke-linecap="round">
+        <!-- cap / foil -->
+        <path d="M171,70 L199,70 L199,104 L171,104 Z" fill="#8B2035"/>
+        <!-- neck -->
+        <path d="M173,104 L173,150 M197,104 L197,150"/>
+        <!-- shoulders + body -->
+        <path d="M173,150
+                 C173,178 150,196 150,236
+                 L150,432
+                 C150,452 158,460 185,460
+                 C212,460 220,452 220,432
+                 L220,236
+                 C220,196 197,178 197,150 Z"/>
+        <!-- label -->
+        <rect x="150" y="300" width="70" height="96" rx="3"/>
+        <line x1="160" y1="316" x2="210" y2="316"/>
+        <line x1="160" y1="384" x2="210" y2="384"/>
+        <ellipse cx="185" cy="372" rx="9" ry="5"/>
+        <text class="label-script" x="185" y="344" font-size="22" text-anchor="middle">Bistro</text>
+        <text class="label-script" x="185" y="368" font-size="18" text-anchor="middle">Vincent</text>
+      </g>
+
+      <!-- ══════════ POUR STREAM ══════════ -->
+      <g id="stream" fill="none" stroke-linecap="round">
+        <path class="pour" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="32" opacity="0.10"/>
+        <path class="pour" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="18" opacity="0.28"/>
+        <path class="pour" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="9"  opacity="0.60"/>
+        <path class="pour" d="M383,170 C440,230 498,360 500,390" stroke="#8B2035" stroke-width="4"  opacity="0.83"/>
+        <path class="pour" d="M383,170 C440,230 498,360 500,390" stroke="#c45070" stroke-width="1.2" opacity="0.38"/>
+      </g>
+
+      <!-- ══════════ WINE GLASS ══════════ -->
+      <g id="glass" opacity="0">
+        <!-- wine fill (clipped) -->
+        <g clip-path="url(#bowlClip)">
+          <rect id="wineRect" x="430" y="556" width="176" height="0" fill="#8B2035" opacity="0.83"/>
+        </g>
+        <!-- wine surface line -->
+        <path id="wineSurface" fill="none" stroke="#8B2035" stroke-width="2" opacity="0" stroke-linecap="round"/>
+
+        <!-- glass outline -->
+        <g stroke="#8B2035" stroke-width="2.8" fill="none" stroke-linejoin="round" stroke-linecap="round">
+          <!-- bowl -->
+          <path d="M438,390
+                   C438,452 470,500 470,540
+                   C470,552 484,556 518,556
+                   C552,556 566,552 566,540
+                   C566,500 598,452 598,390
+                   M438,390 L598,390"/>
+          <!-- twin-line stem -->
+          <line x1="513" y1="556" x2="513" y2="654"/>
+          <line x1="523" y1="556" x2="523" y2="654"/>
+          <!-- foot -->
+          <path d="M470,678 C470,664 490,656 518,656 C546,656 566,664 566,678
+                   C566,680 552,680 518,680 C484,680 470,680 470,678 Z"/>
+        </g>
+      </g>
+
+    </svg>
+  </div>
+
+<script>
+  // ── easing ──
+  function easeInOut(t){ return t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t; }
+  // map p within [start,end] -> eased 0..1
+  function phase(p, start, end){
+    if (p <= start) return 0;
+    if (p >= end)   return 1;
+    return easeInOut((p - start) / (end - start));
+  }
+  function lerp(a,b,t){ return a + (b - a)*t; }
+
+  const bottle      = document.getElementById('bottle');
+  const glass       = document.getElementById('glass');
+  const pours       = document.querySelectorAll('.pour');
+  const wineRect    = document.getElementById('wineRect');
+  const wineSurface = document.getElementById('wineSurface');
+
+  // measure pour path length
+  const pourLen = pours[0].getTotalLength();
+  pours.forEach(p => {
+    p.style.strokeDasharray  = pourLen;
+    p.style.strokeDashoffset = pourLen;
+  });
+
+  // glass geometry constants
+  const Y_WAIST = 556, Y_BULGE = 462, Y_RIM = 390;
+  const HW_WAIST = 20, HW_BULGE = 94, HW_RIM = 80;
+  const GLASS_CX = 518;
+
+  // interpolate halfWidth at a given y across the three key points
+  function halfWidthAt(y){
+    if (y >= Y_BULGE){            // between waist and bulge
+      const t = (Y_WAIST - y) / (Y_WAIST - Y_BULGE);
+      return lerp(HW_WAIST, HW_BULGE, t);
+    } else {                      // between bulge and rim
+      const t = (Y_BULGE - y) / (Y_BULGE - Y_RIM);
+      return lerp(HW_BULGE, HW_RIM, t);
+    }
+  }
+
+  function update(){
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+
+    // Phase 1: bottle rotates 30 -> 65
+    const a1 = phase(p, 0.00, 0.38);
+    const angle = lerp(30, 65, a1);
+    bottle.setAttribute('transform', `rotate(${angle} 185 262)`);
+
+    // Phase 2: glass fades in
+    const a2 = phase(p, 0.34, 0.55);
+    glass.setAttribute('opacity', a2);
+
+    // Phase 3: pour stream draws
+    const a3 = phase(p, 0.50, 0.72);
+    const off = pourLen * (1 - a3);
+    pours.forEach(pp => pp.style.strokeDashoffset = off);
+
+    // Phase 4: wine fills bottom-up to 60% of bowl height
+    const a4 = phase(p, 0.66, 0.97);
+    const bowlHeight = Y_WAIST - Y_RIM;             // 166
+    const fillH = bowlHeight * 0.60 * a4;           // up to ~99.6
+    const fillTop = Y_WAIST - fillH;
+    wineRect.setAttribute('y', fillTop);
+    wineRect.setAttribute('height', fillH);
+
+    if (a4 > 0){
+      const hw = halfWidthAt(fillTop);
+      const x1 = GLASS_CX - hw, x2 = GLASS_CX + hw;
+      const cy = fillTop - 6;                       // subtle curved meniscus
+      wineSurface.setAttribute('d',
+        `M${x1},${fillTop} Q${GLASS_CX},${cy} ${x2},${fillTop}`);
+      wineSurface.setAttribute('opacity', 0.9);
+    } else {
+      wineSurface.setAttribute('opacity', 0);
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive:true });
+  window.addEventListener('resize', update);
+  update();
+</script>
+</body>
+</html>
